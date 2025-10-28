@@ -1,0 +1,38 @@
+{
+  "name": "todolist",
+  "version": "1.0.0",
+  "description": "https://github.com/mizantropich/toDoList https://mizantropich.github.io/toDoList/",
+  "main": "vite.config.js",
+  "scripts": {
+    "test": "vitest",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mizantropich/toDoList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mizantropich/toDoList/issues"
+  },
+  "homepage": "https://github.com/mizantropich/toDoList#readme",
+  "devDependencies": {
+    "@vitest/ui": "^3.2.4",
+    "gh-pages": "^6.3.0",
+    "jsdom": "^27.0.0",
+    "vite": "^7.1.12",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=10.8.2"
+  }
+}

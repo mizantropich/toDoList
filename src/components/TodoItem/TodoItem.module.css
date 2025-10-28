@@ -1,0 +1,27 @@
+.item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.completed {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+.checkbox {
+  margin-right: 12px;
+}
+.text {
+  flex: 1;
+}
+.deleteButton {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px 10px;
+}
