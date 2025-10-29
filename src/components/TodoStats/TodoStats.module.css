@@ -22,3 +22,21 @@
 .info {
   color: #888;
 }
+
+/* Адаптив для мобильных */
+@media (max-width: 480px) {
+  .stats {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .counter,
+  .info {
+    font-size: 14px;
+  }
+  
+  .counter strong {
+    font-size: 16px;
+  }
+}

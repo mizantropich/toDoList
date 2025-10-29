@@ -1,26 +1,46 @@
 .form {
   display: flex;
   margin-bottom: 16px;
+  gap: 8px;
 }
+
 .input {
   flex: 1;
-  padding: 8px 12px;
+  padding: 10px 14px;
   font-size: 16px;
   border: 1px solid #d0d0d0;
-  border-radius: 5px 0 0 5px;
+  border-radius: 6px;
   outline: none;
+  transition: border 0.2s;
 }
+
+.input:focus {
+  border-color: #377cfb;
+}
+
 .button {
-  padding: 8px 16px;
+  padding: 10px 20px;
   background: #377cfb;
   color: #fff;
   border: none;
-  border-radius: 0 5px 5px 0;
+  border-radius: 6px;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.2s;
+  white-space: nowrap;
 }
 
 .button:hover {
   background: #2156b6;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 480px) {
+  .form {
+    flex-direction: column;
+  }
+  
+  .button {
+    width: 100%;
+  }
 }

@@ -6,7 +6,7 @@
 
 .filterButton {
   flex: 1;
-  padding: 8px 16px;
+  padding: 10px 16px;
   border: 1px solid #d0d0d0;
   background: white;
   border-radius: 6px;
@@ -14,6 +14,7 @@
   font-size: 14px;
   transition: all 0.2s;
   color: #555;
+  font-weight: 500;
 }
 
 .filterButton:hover {
@@ -25,4 +26,15 @@
   background: #377cfb;
   color: white;
   border-color: #377cfb;
+}
+
+/* Адаптив: при ширине 375px и меньше — фильтры в столбик */
+@media (max-width: 480px) {
+  .filters {
+    flex-direction: column;
+  }
+  
+  .filterButton {
+    width: 100%;
+  }
 }
