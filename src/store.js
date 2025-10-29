@@ -14,8 +14,16 @@ function loadFromLocal() {
 
 let tasks = loadFromLocal();
 
+// Сортировка: незавершённые задачи сверху, завершённые внизу
+function sortTasks(tasksArray) {
+  return [...tasksArray].sort((a, b) => {
+    if (a.completed === b.completed) return 0;
+    return a.completed ? 1 : -1; // completed идут вниз
+  });
+}
+
 export function getTasks() {
-  return [...tasks];
+  return sortTasks(tasks);
 }
 
 export function addTask(text) {
@@ -39,4 +47,22 @@ export function toggleTask(id) {
 export function deleteTask(id) {
   tasks = tasks.filter(t => t.id !== id);
   saveToLocal(tasks);
+}
+
+// Получить количество активных задач
+export function getActiveCount() {
+  return tasks.filter(t => !t.completed).length;
+}
+
+export function getFilteredTasks(filter = 'all') {
+  const sorted = sortTasks(tasks);
+  
+  switch(filter) {
+    case 'active':
+      return sorted.filter(t => !t.completed);
+    case 'completed':
+      return sorted.filter(t => t.completed);
+    default:
+      return sorted;
+  }
 }
