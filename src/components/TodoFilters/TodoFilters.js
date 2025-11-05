@@ -9,18 +9,24 @@ export function TodoFilters({ currentFilter, onFilterChange }) {
 
   const div = document.createElement('div');
   div.className = styles.filters;
+  div.setAttribute('role', 'group');
+  div.setAttribute('aria-label', 'Фильтры для просмотра задач');
 
   filters.forEach(filter => {
     const button = document.createElement('button');
     button.textContent = filter.label;
     button.className = styles.filterButton;
     
-    // Активная кнопка получает дополнительный класс
     if (filter.id === currentFilter) {
       button.classList.add(styles.active);
+      button.setAttribute('aria-current', 'true');
+    } else {
+      button.setAttribute('aria-current', 'false');
     }
     
+    button.setAttribute('aria-label', `Показать ${filter.label.toLowerCase()} задачи`);
     button.onclick = () => onFilterChange(filter.id);
+    
     div.appendChild(button);
   });
 

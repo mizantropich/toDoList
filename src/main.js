@@ -3,6 +3,7 @@ import { TodoItem } from './components/TodoItem/TodoItem.js';
 import { AddTodoForm } from './components/AddTodoForm/AddTodoForm.js';
 import { TodoStats } from './components/TodoStats/TodoStats.js';
 import { TodoFilters } from './components/TodoFilters/TodoFilters.js';
+import { EmptyState } from './components/EmptyState/EmptyState.js';
 
 const app = document.getElementById('todo-app');
 
@@ -68,24 +69,20 @@ function renderList() {
   
   // Сообщение если нет задач после фильтрации
   if (filteredTasks.length === 0 && allTasks.length > 0) {
-    const emptyMsg = document.createElement('p');
-    emptyMsg.textContent = currentFilter === 'active' 
+    const emptyMessage = currentFilter === 'active' 
       ? '✅ Все задачи выполнены!' 
       : '📝 Нет выполненных задач';
-    emptyMsg.style.textAlign = 'center';
-    emptyMsg.style.color = '#999';
-    emptyMsg.style.marginTop = '20px';
-    app.appendChild(emptyMsg);
+    
+    app.appendChild(
+      EmptyState({ message: emptyMessage })
+    );
   }
   
   // Сообщение если совсем нет задач
   if (allTasks.length === 0) {
-    const emptyMsg = document.createElement('p');
-    emptyMsg.textContent = '📝 Нет задач. Добавьте первую!';
-    emptyMsg.style.textAlign = 'center';
-    emptyMsg.style.color = '#999';
-    emptyMsg.style.marginTop = '20px';
-    app.appendChild(emptyMsg);
+    app.appendChild(
+      EmptyState({ message: '📝 Нет задач. Добавьте первую!' })
+    );
   }
 }
 

@@ -64,3 +64,20 @@ h1 {
     margin-bottom: 16px;
   }
 }
+
+/* Класс для скрытия от видимого отображения, но доступен скринридерам */
+.sr-only {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Видимое внимание на focus для клавиатурной навигации */
+button:focus,
+input:focus,
+a:focus {
+  outline: 2px solid #377cfb;
+  outline-offset: 2px;
+}
