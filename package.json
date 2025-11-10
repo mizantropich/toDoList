@@ -2,7 +2,6 @@
   "name": "todolist",
   "version": "1.0.0",
   "description": "https://github.com/mizantropich/toDoList https://mizantropich.github.io/toDoList/",
-  "main": "vite.config.js",
   "scripts": {
     "test": "vitest",
     "dev": "vite",
