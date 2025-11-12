@@ -2,7 +2,7 @@ const LOCAL_KEY = "todo-tasks-data";
 
 // Генерируем уникальный ID через счётчик + текущее время
 function generateId() {
-  return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  return `${Date.now()}-${Math.random().toString(36).slice(2, 11)}`;
 }
 
 // Безопасное сохранение в localStorage с обработкой ошибок
